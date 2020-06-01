@@ -11,7 +11,7 @@ body {
 
 .content {
     flex: 1 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #EDEDEB;
 }
 
@@ -59,11 +59,6 @@ header {
     padding: 18px;
 }
 
-#korzina {
-    padding: 0;
-    background: inherit;
-}
-
 .main-nav li:hover {
     cursor: pointer;
 }
@@ -94,6 +89,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    background-size: 100%;
 }
 
 .category {
@@ -124,7 +120,8 @@ header {
     cursor: pointer;
 }
 
-.item>div:last-child {
+.item>button {
+    cursor: pointer;
     font-family: Arial;
     opacity: 0;
     position: absolute;
@@ -133,6 +130,8 @@ header {
     background-color: #D6D6D6;
     height: 40px;
     padding: 10px;
+    border: none;
+    left: 0;
 }
 
 .price {
@@ -214,4 +213,90 @@ footer {
     color: #843E9E;
     display: inline-block;
     line-height: 1em;
+}
+
+#korzina {
+    padding: 0;
+    background: inherit;
+    border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #E1BEE7;
+    margin: auto;
+    padding: 0;
+    border: 5px solid #7B1FA2;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #9C27B0;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #9C27B0;
+    color: white;
 }
